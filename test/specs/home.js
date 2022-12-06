@@ -30,4 +30,12 @@ describe('Home',() => {
         const headingText =  await $('.elementor-widget-container > h1').getText();
         await expect(headingText).toEqual('Think different. Make different.');
     });
+
+
+
+    it('Find Head Element and assert the text', async ()=> {
+        await browser.url('https://practice.automationbro.com');
+        const headingText =  await $('.elementor-widget-container > h1').getText();
+        await expect(headingText).toEqual('Think different. Make different.');
+    });
 });
