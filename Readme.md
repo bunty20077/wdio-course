@@ -25,5 +25,6 @@ Xpath Selector
 ==============
 https://devhints.io/xpath
 
-#evf-277-field_ys0GeZISRs-1-container > input
-.evf-frontend-grid > div:first-child >input
+VS Code Autocompletion
+=======================
+https://webdriver.io/docs/autocompletion/
