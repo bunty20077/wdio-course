@@ -108,7 +108,7 @@ specs: [
         ]
     },
 ```
-
+To exclude the test , include those test file spec names inside exclude block of wdio.config.js
 
 ## Running Tests
 
