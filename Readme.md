@@ -86,7 +86,10 @@ Add Below Lines in wdio.conf.js
         ]
     },
 ```
-    
+ ## Installing Jenkins
+ ```
+brew install jenkins-lts
+ ```   
 ## Usage/Examples
 
 ```javascript
@@ -128,6 +131,15 @@ Command to run specific spec file
 npx wdio --spec test/specs/home.js
 ```
 
+ To run in Firefox add binary path if Firefox doesnot run automatically
+```bash
+ {
+        browserName: 'firefox',
+            'moz:firefoxOptions': {
+                binary: '/Applications/Firefox.app/Contents/MacOS/firefox-bin'
+            }
+    },
+```
 
 ## Authors
 
