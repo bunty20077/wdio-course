@@ -30,7 +30,8 @@ class ContactPage {
         await this.phoneNumberField.setValue(phoneNumber);
         await this.messageField.setValue(message);
         await this.submitBtn.click();
-    }  
+    }
+
 }
 
 module.exports = new ContactPage();
