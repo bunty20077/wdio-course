@@ -89,7 +89,43 @@ Add Below Lines in wdio.conf.js
  ## Installing Jenkins
  ```
 brew install jenkins-lts
- ```   
+ ```
+ 
+## Run from Jenkins
+
+Run Jenkins locally
+```bash
+  jenkins-lts
+```
+Source Code Management
+```bash
+  Set git and provide public url for Repo
+  For credentials , generate PAT from Git-> Developers Settings and 
+  provide that one as pasword along with username( not email)
+```
+
+Build Environment
+```bash
+  Provide Node & npm bin/ folder to PATH - click this checkbox option
+```
+
+Provide these commands inside Shell on Jenkins under Build Steps
+```bash
+npm install
+export BROWSERSTACK_USERNAME=********************
+export BROWSERSTACK_ACCESS_KEY=******************
+npx wdio --suite smoke
+```
+
+Post-build Actions set to Allure-Reports plugin
+
+
+Need to install plugin from Global Configuration
+```bash
+  node
+  allure
+  allure-commands
+```  
 ## Usage/Examples
 
 ```javascript
