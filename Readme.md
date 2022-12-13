@@ -114,6 +114,7 @@ Provide these commands inside Shell on Jenkins under Build Steps
 npm install
 export BROWSERSTACK_USERNAME=********************
 export BROWSERSTACK_ACCESS_KEY=******************
+export TARGET_ENV={param.Environment}
 npx wdio --suite smoke
 ```
 
@@ -154,16 +155,19 @@ To exclude the test , include those test file spec names inside exclude block of
 Command to run a single suite
 
 ```bash
+export TARGET_ENV=qa
 npx wdio --suite smoke
 ```
 
 Command to run a group of suites
 ```bash
+export TARGET_ENV=prod
 npx wdio --suite smoke --suite component
 ```
 
 Command to run specific spec file
 ```bash
+export TARGET_ENV=qa
 npx wdio --spec test/specs/home.js
 ```
 

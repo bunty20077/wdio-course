@@ -1,5 +1,17 @@
 const allure = require('allure-commandline');
+
+let baseUrl ;
+if(process.env.TARGET_ENV === 'qa'){
+    baseUrl = 'https://practiceqa.automationbro.com/';
+
+}else if(process.env.TARGET_ENV === 'prod'){
+    baseUrl = 'https://practice.automationbro.com/';
+}else{
+    baseUrl = 'https://www.google.com';
+}
+
 exports.config = {
+    
 
     // ==============================
     // BrowserStack Configuration
@@ -43,6 +55,9 @@ exports.config = {
         ],
         component: [
             './test/specs/**/nav.js',
+        ],
+        sample: [
+            './test/specs/**/sample.js'
         ]
     },
 
@@ -121,7 +136,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://practice.automationbro.com/',
+    baseUrl,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -138,10 +153,10 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     // To make test run in different browsers locally use selenium-standalone
-    //services: ['selenium-standalone'],
+    services: ['selenium-standalone'],
 
     // To make test run in browserstack uncomment below line
-    services: ['browserstack'],
+    //services: ['browserstack'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
